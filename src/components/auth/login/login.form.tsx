@@ -80,16 +80,9 @@ export default function LoginPage() {
       }
       <Box sx={{ bgcolor: "var(--mui-palette-background-level1)", p: 3, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <Container maxWidth="xs">
-          <Box textAlign="center" mb={3}>
-            <Typography variant="h4" fontWeight="bold" color="primary">
-              <Box textAlign="center" mb={3}>
-                <Image src="/assets/Chefgaa logo Final-08 1.png" alt="Logo" height={40} width={160} style={{ height: 40, width: "auto" }} />
-              </Box>
-            </Typography>
-          </Box>
           <Card>
             <CardHeader
-              title="Owner Portal"
+              title="Welcome Back"
               sx={{ textAlign: "center" }}
               titleTypographyProps={{
                 fontSize: '0.875rem',
@@ -155,11 +148,6 @@ export default function LoginPage() {
               </Stack>
             </CardContent>
           </Card>
-          <Box mt={4} textAlign="center">
-            <Typography variant="body2" color="text.secondary">
-              All rights reserved, Powered by <strong>Chefgaa</strong>
-            </Typography>
-          </Box>
         </Container>
       </Box>
     </>

@@ -19,13 +19,14 @@ export interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-	name: "Chefgaa",
+	name: "Trend Forge",
 	description: "",
 	direction: "ltr",
 	language: "en",
 	theme: "light",
-	themeColor: "#090a0b",
-	primaryColor: "chefgaaOrange",
+	// themeColor: "#090a0b",
+	themeColor: "#1F51FF",
+	primaryColor: "neonBlue",
 	logLevel: (process.env.NEXT_PUBLIC_LOG_LEVEL as keyof typeof LogLevel) || LogLevel.ALL,
 	authStrategy: (process.env.NEXT_PUBLIC_AUTH_STRATEGY as keyof typeof AuthStrategy) || AuthStrategy.NONE,
 };
