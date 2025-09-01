@@ -12,19 +12,15 @@ import { CaretRight as CaretRightIcon } from "@phosphor-icons/react/dist/ssr/Car
 
 import type { NavItemConfig } from "@/types/nav";
 import type { DashboardNavColor } from "@/types/settings";
-import { paths } from "@/paths";
 import { isNavItemActive } from "@/lib/is-nav-item-active";
-import { Logo } from "@/components/core/logo";
-import type { ColorScheme } from "@/styles/theme/types";
 
 import { icons } from "../nav-icons";
-import { WorkspacesSwitch } from "../workspaces-switch";
 import { navColorStyles } from "./styles";
 
-const logoColors = {
-	dark: { blend_in: "light", discrete: "light", evident: "light" },
-	light: { blend_in: "dark", discrete: "dark", evident: "light" },
-} as Record<ColorScheme, Record<DashboardNavColor, "dark" | "light">>;
+// const logoColors = {
+// 	dark: { blend_in: "light", discrete: "light", evident: "light" },
+// 	light: { blend_in: "dark", discrete: "dark", evident: "light" },
+// } as Record<ColorScheme, Record<DashboardNavColor, "dark" | "light">>;
 
 export interface SideNavProps {
 	color?: DashboardNavColor;
@@ -37,13 +33,12 @@ export function SideNav({ color = "evident", items = [] }: SideNavProps): React.
 	const { colorScheme = "light" } = useColorScheme();
 
 	const styles = navColorStyles[colorScheme][color];
-	const logoColor = logoColors[colorScheme][color];
 
 	return (
 		<Box
 			sx={{
 				...styles,
-				bgcolor: "var(--SideNav-background)",
+				bgcolor: "white",
 				borderRight: "var(--SideNav-border)",
 				color: "var(--SideNav-color)",
 				display: { xs: "none", lg: "flex" },
@@ -56,14 +51,14 @@ export function SideNav({ color = "evident", items = [] }: SideNavProps): React.
 				zIndex: "var(--SideNav-zIndex)",
 			}}
 		>
-			<Stack spacing={2} sx={{ p: 2 }}>
+			{/* <Stack spacing={2} sx={{ p: 2 }}>
 				<div>
 					<Box component={RouterLink}href={paths.dashboard.overview} sx={{ display: "inline-flex" }}>
 						<Logo color={logoColor} height={32} width={122} />
 					</Box>
 				</div>
 				<WorkspacesSwitch />
-			</Stack>
+			</Stack> */}
 			<Box
 				component="nav"
 				sx={{
@@ -169,26 +164,26 @@ function NavItem({
 			<Box
 				{...(isBranch
 					? {
-							onClick: (): void => {
+						onClick: (): void => {
+							setOpen(!open);
+						},
+						onKeyUp: (event: React.KeyboardEvent<HTMLDivElement>): void => {
+							if (event.key === "Enter" || event.key === " ") {
 								setOpen(!open);
-							},
-							onKeyUp: (event: React.KeyboardEvent<HTMLDivElement>): void => {
-								if (event.key === "Enter" || event.key === " ") {
-									setOpen(!open);
-								}
-							},
-							role: "button",
-						}
+							}
+						},
+						role: "button",
+					}
 					: {
-							...(href
-								? {
-										component: external ? "a" : RouterLink,
-										href,
-										target: external ? "_blank" : undefined,
-										rel: external ? "noreferrer" : undefined,
-									}
-								: { role: "button" }),
-						})}
+						...(href
+							? {
+								component: external ? "a" : RouterLink,
+								href,
+								target: external ? "_blank" : undefined,
+								rel: external ? "noreferrer" : undefined,
+							}
+							: { role: "button" }),
+					})}
 				sx={{
 					alignItems: "center",
 					borderRadius: 1,

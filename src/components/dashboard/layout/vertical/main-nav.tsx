@@ -13,8 +13,6 @@ import { usePopover } from "@/hooks/use-popover";
 
 import { MobileNav } from "../mobile-nav";
 import { UserPopover } from "../user-popover";
-import { useHeaderTitle } from "@/hooks/header-title";
-import { Typography } from "@mui/material";
 
 export interface MainNavProps {
 	items: NavItemConfig[];
@@ -22,7 +20,6 @@ export interface MainNavProps {
 
 export function MainNav({ items }: MainNavProps): React.JSX.Element {
 	const [openNav, setOpenNav] = React.useState<boolean>(false);
-	const { headerTitle } = useHeaderTitle();
 
 	return (
 		<React.Fragment>
@@ -60,8 +57,6 @@ export function MainNav({ items }: MainNavProps): React.JSX.Element {
 							<ListIcon />
 						</IconButton>
 						{/* <SearchButton /> */}
-
-						<Typography variant="h5">{headerTitle}</Typography>
 
 					</Stack>
 					<Stack

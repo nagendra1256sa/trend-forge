@@ -25,7 +25,7 @@ const navItems = [
 		key: "group-0",
 		items: [
 			{ key: "home", title: "Home", href: paths.home },
-			{ key: "components", title: "Components", href: paths.components.index },
+			// { key: "components", title: "Components", href: paths.components.index },
 			{
 				key: "dashboard",
 				title: "Dashboard",

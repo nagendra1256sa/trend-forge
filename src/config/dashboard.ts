@@ -20,42 +20,61 @@ export const dashboardConfig = {
 	navItems: [
 		{
 			key: "dashboards",
-			title:'Dashboard',
-			items: [
-				{ key: "overview", title: "Overview", href: paths.dashboard.overview, icon: "house" },
-				{ key: "ordertypes", title: "Order Types", href: paths.ordertypes, icon: "shopping-cart-simple" },
-				// {key: "reports", title: "Reports", href: paths.reports	, icon: "chart-pie" },
-				{ key: "orders", title: "Orders", href: paths.order, icon: "shopping-cart-simple" },
-				// { key: "roles", title: "Roles", href: paths.roles, icon: "currency-eth" },
-				// { key: "reasons", title: "Reasons", href: paths.reasons, icon: "house" },
-				// { key: "paymentoptions", title: "Payment Options", href: paths.paymentoptions, icon: "chart-pie" },
-				// { key: "paymentconfigurations", title: "Payment Configurations", href: paths.paymentconfigurations, icon: "cube" },
-				// { key: "employees", title: "Employees", href: paths.employees, icon: "currency-eth" },
-				{ key: "menuitems", title: "Menu Items", href: paths.menuitems, icon: "receipt" },
-				{ key : "tableLayouts", title: "Table Layouts", href: paths.tableLayouts, icon: "restaurantTable"},
-				{ key: "employees", title: "Employees", href: paths.employees, icon: "users"},
-				{ key: "reasons", title: "Reasons", href: paths.reasons, icon: "warning-octagon"}
-				// { key: "tax-rule", title: "Tax Rule", href: paths.taxrule, icon: "taxrules" },
-				// { key: "tables", title: "Tables", href: paths.tables, icon: "chart-pie" },
-				// { key: "manageclients", title: "Manage Clients", href: paths.manageclients, icon: "cube" },
-				// { key: "modifiergroups", title: "Modifier Groups", href: paths.modifiergroups, icon: "currency-eth" },
-			],
+			// title:'Dashboard',
+			 items: [
+        {
+          key: "dashboard",
+          title: "Dashboard",
+        //   href: paths.dashboard.overview, // replace with your route
+          icon: "layout-dashboard", // choose from your icon set
+        },
+        {
+          key: "client-engagement",
+          title: "Client Engagement",
+          href: paths.menuitems, 
+          icon: "handshake",
+        },
+        {
+          key: "user-management",
+          title: "User Management",
+        //   href: paths.userManagement, // replace with your route
+          icon: "users",
+        },
+        {
+          key: "employee-management",
+          title: "Employee Management",
+        //   href: paths.employeeManagement, // replace with your route
+          icon: "user-check",
+        },
+        {
+          key: "settings",
+          title: "Settings",
+        //   href: paths.settings,
+          icon: "settings",
+        },
+        {
+          key: "rbac",
+          title: "RBAC",
+        //   href: paths.rbac,
+          icon: "shield-check",
+        },
+      ],
 		},
-		 {
-			key: "general",
-			title: "General",
-			items: [
-				{
-					key: "settings",
-					title: "Settings",
-					icon: "gear",
-					items: [
-						{ key: "tax-rule", title: "Tax Rule", href: paths.taxrule },
-						{ key: "gratuity", title: "Gratuity", href: paths.gratuity},
-					],
-				},
-			],
-		},
+		//  {
+		// 	key: "general",
+		// 	title: "General",
+		// 	items: [
+		// 		{
+		// 			key: "settings",
+		// 			title: "Settings",
+		// 			icon: "gear",
+		// 			items: [
+		// 				{ key: "tax-rule", title: "Tax Rule", href: paths.taxrule },
+		// 				{ key: "gratuity", title: "Gratuity", href: paths.gratuity},
+		// 			],
+		// 		},
+		// 	],
+		// },
 		// {
 		// 	key: "general",
 		// 	title: "General",

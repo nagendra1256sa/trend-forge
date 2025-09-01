@@ -35,11 +35,10 @@ export function VerticalLayout({ children }: VerticalLayoutProps): React.JSX.Ele
 			/>
 			<Box
 				sx={{
-					bgcolor: "var(--mui-palette-background-default)",
 					display: "flex",
 					flexDirection: "column",
 					position: "relative",
-					minHeight: "100%",
+					minHeight: "100vh",
 				}}
 			>
 				<SideNav color={navColor} items={dashboardConfig?.navItems} />
@@ -57,6 +56,8 @@ export function VerticalLayout({ children }: VerticalLayoutProps): React.JSX.Ele
 							display: "flex",
 							flex: "1 1 auto",
 							flexDirection: "column",
+							p: { xs: 2, lg: 4 },
+							width: "100%",
 						}}
 					>
 						{children}
