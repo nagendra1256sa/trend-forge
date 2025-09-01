@@ -1,0 +1,118 @@
+/**
+ * This mixin sets the font size and weight for an element based on predefined maps of font sizes and weights.
+ *
+ * @param {String} $size - The key for the font size from the $font-sizes map.
+ * @param {String} $weight - The key for the font weight from the $font-weights map.
+ */
+@use 'sass:map';
+
+
+@mixin font-style($size, $weight) {
+  $size: map-get($font-sizes, $size);
+  $weight: map-get($font-weights, $weight);
+
+  @if $size==null {
+    @error "Invalid font size key: #{$size}.";
+  }
+
+  @if $weight==null {
+    @error "Invalid font weight key: #{$weight}.";
+  }
+
+  font-size: $size !important;
+  font-weight: $weight !important;
+}
+
+@mixin border-radius($radius) {
+  $prefixes: ('-webkit-', '-moz-', '-ms-', '-o-', '');
+
+  @each $prefix in $prefixes {
+    $property: if($prefix== '', 'border-radius', $prefix + 'border-radius');
+    #{$property}: $radius;
+  }
+
+  border-radius: $radius;
+}
+
+/**
+ * This mixin applies styles based on predefined breakpoints and media query types.
+ *
+ * @param {String} $breakpoint - The key for the breakpoint from the $breakpoints map.
+ * @param {String} $query-type - The type of media query (default is 'max-width').
+ */
+@mixin respond-media($breakpoint, $query-type: max-width) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (#{$query-type}: #{$breakpoint-value}) {
+      @content;
+    }
+  } @else {
+    @error "No value found for breakpoint: #{$breakpoint}. Please check your breakpoint map.";
+  }
+}
+
+
+@mixin d-i-bloc {
+  display: inline-block;
+}
+
+@mixin fullwidth {
+  width: 100%;
+}
+
+@mixin fullheight {
+  height: 100%;
+}
+
+@mixin zeromargin {
+  margin: 0px;
+}
+
+@mixin zeropadding {
+  padding: 0px;
+}
+
+
+@mixin flexwithcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin vpheight {
+  height: 100vh;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin textcenter {
+  text-align: center !important;
+}
+
+@mixin textRight {
+  text-align: right;
+}
+
+@mixin textLeft {
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

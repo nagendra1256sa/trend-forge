@@ -1,0 +1,79 @@
+@use "sass/variables";
+@use "./sass/utils";
+@use "sass/mixins";
+@use "sass/apis";
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboardFrame {
+  iframe {
+    min-height: calc(100vh - 70px);
+  }
+}
+
+/*************************************
+        fallback loader
+**************************************/
+.loader-overlay {
+  @extend .position-fixed;
+  @extend .top-0;
+  @extend .left-0;
+  @extend .w-screen;
+  @extend .h-screen;
+  background-color: var(--loader-bg);
+  @include mixins.flexwithcenter;
+  z-index: 9999;
+
+  .loader {
+    width : var(--loader-size);
+    height: var(--loader-size);
+    @include mixins.border-radius(50%);
+    @include mixins.d-i-bloc;
+    @extend .position-relative;
+    border-top  : var(--loader-border-width) solid var(--loader-primary-color);
+    border-right: var(--loader-border-width) solid transparent;
+    animation   : rotation 1s linear infinite;
+
+    &::after {
+      content: '';
+      @extend .position-absolute;
+      @extend .top-0;
+      @extend .left-0;
+      width : var(--loader-size);
+      height: var(--loader-size);
+      @include mixins.border-radius(50%);
+      border-left  : var(--loader-border-width) solid var(--loader-secondary-color);
+      border-bottom: var(--loader-border-width) solid transparent;
+      animation    : rotation 0.5s linear infinite reverse;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sticky-left {
+  position: sticky;
+  left    : 0;
+  z-index : 2;
+  background-color: var(--mui-palette-common-white);
+}
+
+.sticky-right {
+  position: sticky;
+  right   : 0;
+  z-index : 2;
+  background-color: var(--mui-palette-common-white);
+}
+// .MuiTableRow-hover:hover, .MuiTableRow-hover:hover {
+//   background-color: #e0e0e0 !important;
+// }

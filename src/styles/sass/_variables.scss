@@ -1,0 +1,32 @@
+:root{
+
+   --loader-size: 60px;
+   --loader-border-width: 4px;
+   --loader-bg: rgba(0, 0, 0, 0.5);
+   --loader-primary-color: #ffffff;
+   --loader-secondary-color: var(--mui-palette-primary-main);
+}
+
+//Sass lists & arrays
+$font-sizes: (
+  small: 12px,
+  regular: 14px,
+  medium: 16px,
+  x-medium: 18px,
+  large: 20px,
+  x-large: 24px,
+  xx-large: 32px,
+);
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+);
+
+
+
+
