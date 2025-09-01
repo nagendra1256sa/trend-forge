@@ -39,7 +39,6 @@ export const AuthenticationProvider = ({ children }: AuthProviderProps): React.J
       }
     } else {
       localStorage.removeItem("userDetails");
-      localStorage.removeItem("BCId_Key");
       Cookies.remove("accessToken");
     }
   }, [userDetails]);

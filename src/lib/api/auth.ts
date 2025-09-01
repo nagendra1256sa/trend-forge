@@ -10,6 +10,7 @@ export async function loginApi(loginData: Values): Promise<LoginResponse> {
 	const data = new URLSearchParams();
 	data.append("username", loginData.email);
 	data.append("password", loginData.password);
+	//pending
 	data.append("grant_type", "password");
 	data.append("client_id", "application");
 	data.append("client_secret", "secret");
@@ -20,7 +21,7 @@ export async function loginApi(loginData: Values): Promise<LoginResponse> {
 			},
 		});
 		if (response?.status === 200) {
-			const data = response?.data;
+			const data = response?.data; //pending
 			const loginDetails = new LoginAdapter();
 			return {
 				success: true,
